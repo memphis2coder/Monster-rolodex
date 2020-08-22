@@ -1,0 +1,14 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .5s;
+    background-color: aquamarine;
+}
+
+.card-container:hover {
+    transform: scale(1.05);
+}

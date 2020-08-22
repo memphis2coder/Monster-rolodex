@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CardList from './components/cardList/cardList';
 import './App.css';
 
 class App extends Component {
@@ -13,19 +14,14 @@ class App extends Component {
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json()) // receive a promise & change data to json
-      .then(users => this.setState({monsters: users}))
+      .then(data => this.setState({monsters: data}))
   }
 
   render() {
     return (
       <div className="App">
-
-        {this.state.monsters.map(monster => ( // map over the monsters array 
-            <h1 key={monster.id}>
-              {monster.name}
-            </h1>
-          ))}
-
+        <CardList monsters={this.state.monsters} />
+        
     </div>
     )
   }
