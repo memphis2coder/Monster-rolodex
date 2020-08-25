@@ -2,10 +2,15 @@ import React from 'react'
 
 import './SearchBar.css';
 
-export default function SearchBar(props) {
+export default function SearchBar({placeholder, handleChange}) {
     return (
-        <div className="search-bar">
-            filter: <input type="text"/>
+        <div className="search-container">
+            <input
+                className="searchBox" 
+                type="search" 
+                placeholder={placeholder} // this makes it more dynamic
+                onChange={handleChange} 
+            />
         </div>
     )
 }
